@@ -1,0 +1,29 @@
+package com.algaworks.brewer.config;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
+import org.thymeleaf.templatemode.TemplateMode;
+import org.thymeleaf.templateresolver.ITemplateResolver;
+
+
+@Configuration
+@ComponentScan(basePackageClasses= {CervejasController.class})
+@EnableWebMvc;
+
+public class Webconfig extends WebMvcConfigurerAdapter{
+
+   privateITemplateResolver templateResolver() {
+	   
+	   SpringResourceTemplateResolver resolver = new SpringResourceTemplateResolver();
+	   ApplicationContext applicationContext;
+	resolver.setApplicationContext(applicationContext);
+	   resolver.setPrefix("classpath:templates");
+	   resolver.setTemplateMode(TemplateMode.HTML);
+	   
+	   
+   }
+}

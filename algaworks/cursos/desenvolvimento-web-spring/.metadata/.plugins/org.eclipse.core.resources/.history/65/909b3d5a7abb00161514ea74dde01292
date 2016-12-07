@@ -1,0 +1,5 @@
+package com.algawors.brewer.config.init;
+
+public class AppInitializer {
+
+}
